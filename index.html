@@ -14,24 +14,21 @@
 
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #0a0a0a;
+      background-image: url('assets/fundo.jpg'); /* sua imagem de fundo */
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
       color: #fff;
       line-height: 1.6;
+      min-height: 100vh;
     }
 
     header {
-      background: linear-gradient(120deg, #6a00f4, #ff4ecd, #00c3ff);
-      background-size: 600% 600%;
-      animation: gradient 15s ease infinite;
+      background: transparent; /* transparente para deixar a imagem aparecer */
       padding: 100px 20px 80px;
       text-align: center;
       box-shadow: 0 5px 15px #00000060;
-    }
-
-    @keyframes gradient {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+      animation: none;
     }
 
     header h1 {
@@ -63,19 +60,10 @@
       box-shadow: 0 0 25px #00ffcc;
     }
 
-    .bg-section {
-      width: 100%;
-      background-image: url('assets/bg.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-    }
-
-    .conteudo {
+    section {
+      padding: 80px 20px;
       max-width: 1100px;
       margin: auto;
-      padding: 80px 20px;
       animation: fadeIn 1s ease-in;
     }
 
@@ -182,44 +170,38 @@
     </a>
   </header>
 
-  <div class="bg-section">
-    <section class="conteudo">
-      <h2>Serviços</h2>
-      <div class="servicos">
-        <div class="servico"><i class="fas fa-laptop-code"></i><br> Desenvolvimento de lojas virtuais</div>
-        <div class="servico"><i class="fas fa-paint-brush"></i><br> Design gráfico (logos, banners, posts)</div>
-        <div class="servico"><i class="fas fa-book-open"></i><br> Capas para ebooks, cursos e vídeos</div>
-        <div class="servico"><i class="fas fa-code"></i><br> Web design (sites e landing pages)</div>
-        <div class="servico"><i class="fas fa-video"></i><br> Edição de vídeo (YouTube, Instagram, TikTok)</div>
-        <div class="servico"><i class="fas fa-lightbulb"></i><br> Criação de identidade visual</div>
-        <div class="servico"><i class="fas fa-bullhorn"></i><br> Artes para tráfego pago</div>
-        <div class="servico"><i class="fas fa-globe"></i><br> Criação de sites e landing pages</div>
-        <div class="servico"><i class="fas fa-share-alt"></i><br> Gestão de redes sociais</div>
-        <div class="servico"><i class="fas fa-chart-line"></i><br> Consultoria em marketing</div>
-      </div>
-    </section>
-  </div>
+  <section>
+    <h2>Serviços</h2>
+    <div class="servicos">
+      <div class="servico"><i class="fas fa-laptop-code"></i><br> Desenvolvimento de lojas virtuais</div>
+      <div class="servico"><i class="fas fa-paint-brush"></i><br> Design gráfico (logos, banners, posts)</div>
+      <div class="servico"><i class="fas fa-book-open"></i><br> Capas para ebooks, cursos e vídeos</div>
+      <div class="servico"><i class="fas fa-code"></i><br> Web design (sites e landing pages)</div>
+      <div class="servico"><i class="fas fa-video"></i><br> Edição de vídeo (YouTube, Instagram, TikTok)</div>
+      <div class="servico"><i class="fas fa-lightbulb"></i><br> Criação de identidade visual</div>
+      <div class="servico"><i class="fas fa-bullhorn"></i><br> Artes para tráfego pago</div>
+      <div class="servico"><i class="fas fa-globe"></i><br> Criação de sites e landing pages</div>
+      <div class="servico"><i class="fas fa-share-alt"></i><br> Gestão de redes sociais</div>
+      <div class="servico"><i class="fas fa-chart-line"></i><br> Consultoria em marketing</div>
+    </div>
+  </section>
 
-  <div class="bg-section">
-    <section class="conteudo">
-      <h2>Portfólio</h2>
-      <div class="galeria">
-        <img src="assets/print1.jpg" alt="Projeto 1">
-        <img src="assets/print2.jpg" alt="Projeto 2">
-        <img src="assets/print3.jpg" alt="Projeto 3">
-      </div>
-    </section>
-  </div>
+  <section>
+    <h2>Portfólio</h2>
+    <div class="galeria">
+      <img src="assets/print1.jpg" alt="Projeto 1">
+      <img src="assets/print2.jpg" alt="Projeto 2">
+      <img src="assets/print3.jpg" alt="Projeto 3">
+    </div>
+  </section>
 
-  <div class="bg-section">
-    <section class="conteudo contato">
-      <h2>Entre em Contato</h2>
-      <a class="botao" href="https://wa.me/5522998747813?text=Quero%20saber%20mais%20sobre%20o%20seu%20trabalho" target="_blank">
-        Fale comigo no WhatsApp
-      </a>
-      <p>📞 +55 22 99874-7813</p>
-    </section>
-  </div>
+  <section class="contato">
+    <h2>Entre em Contato</h2>
+    <a class="botao" href="https://wa.me/5522998747813?text=Quero%20saber%20mais%20sobre%20o%20seu%20trabalho" target="_blank">
+      Fale comigo no WhatsApp
+    </a>
+    <p>📞 +55 22 99874-7813</p>
+  </section>
 
   <footer>
     © 2025 - Todos os direitos reservados - Thurzin Designer
