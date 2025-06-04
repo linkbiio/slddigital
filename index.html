@@ -14,37 +14,44 @@
 
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-image: url('assets/bg.jpg'); /* sua imagem de fundo */
+      position: relative;
+      min-height: 100vh;
+      z-index: 0;
+    }
+
+    .bg-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('assets/bg.jpg');
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center center;
-      color: #fff;
-      line-height: 1.6;
-      min-height: 100vh;
+      z-index: -2;
     }
 
-    header {
-      position: relative;
-      background: transparent;
-      padding: 100px 20px 80px;
-      text-align: center;
-      box-shadow: 0 5px 15px #00000060;
-      overflow: hidden;
-    }
-
-    header .overlay {
-      position: absolute;
+    .bg-overlay {
+      position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
       background: rgba(0, 0, 0, 0.6);
-      z-index: 1;
+      z-index: -1;
+    }
+
+    header {
+      padding: 100px 20px 80px;
+      text-align: center;
+      box-shadow: 0 5px 15px #00000060;
     }
 
     .conteudo-header {
       position: relative;
       z-index: 2;
+      color: #fff;
     }
 
     header h1 {
@@ -81,6 +88,7 @@
       max-width: 1100px;
       margin: auto;
       animation: fadeIn 1s ease-in;
+      color: #fff;
     }
 
     @keyframes fadeIn {
@@ -177,9 +185,11 @@
   </style>
 </head>
 <body>
+  <!-- Fundo e overlay global -->
+  <div class="bg-wrapper"></div>
+  <div class="bg-overlay"></div>
 
   <header>
-    <div class="overlay"></div>
     <div class="conteudo-header">
       <h1>Transforme Sua Presença Online</h1>
       <p>Especialista em design, vídeo, marketing digital e criação de páginas que convertem!</p>
@@ -225,6 +235,5 @@
   <footer>
     © 2025 - Todos os direitos reservados - Thurzin Designer
   </footer>
-
 </body>
 </html>
