@@ -132,6 +132,14 @@
       color: #888;
     }
 
+    /* Novo estilo para seções animadas */
+    .animada {
+      background: linear-gradient(120deg, #6a00f4, #ff4ecd, #00c3ff);
+      background-size: 600% 600%;
+      animation: gradient 15s ease infinite;
+      color: #fff;
+    }
+
     @media (max-width: 600px) {
       header h1 {
         font-size: 2rem;
@@ -158,7 +166,7 @@
     </a>
   </header>
 
-  <section>
+  <section class="animada">
     <h2>Serviços</h2>
     <div class="servicos">
       <div class="servico"><i class="fas fa-laptop-code"></i> Desenvolvimento de lojas virtuais</div>
@@ -174,7 +182,7 @@
     </div>
   </section>
 
-  <section>
+  <section class="animada">
     <h2>Portfólio</h2>
     <div class="galeria">
       <img src="assets/print1.jpg" alt="Projeto 1">
@@ -183,7 +191,7 @@
     </div>
   </section>
 
-  <section class="contato">
+  <section class="contato animada">
     <h2>Entre em Contato</h2>
     <a class="botao" href="https://wa.me/5522998747813?text=Quero%20saber%20mais%20sobre%20o%20seu%20trabalho" target="_blank">
       Fale comigo no WhatsApp
