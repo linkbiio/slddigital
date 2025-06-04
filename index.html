@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfólio Criativo</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seu Nome | Soluções Criativas</title>
   <style>
     * {
       margin: 0;
@@ -13,83 +13,88 @@
 
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #111;
+      background-color: #0a0a0a;
       color: #fff;
       line-height: 1.6;
     }
 
-    .topo {
-      background: url('assets/fundo-topo.jpg') no-repeat center center/cover;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    header {
+      background: linear-gradient(120deg, #6a00f4, #ff4ecd, #00c3ff);
+      background-size: 600% 600%;
+      animation: gradient 15s ease infinite;
+      padding: 80px 20px;
       text-align: center;
-      position: relative;
     }
 
-    .topo::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.6);
+    @keyframes gradient {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
     }
 
-    .topo .conteudo {
-      position: relative;
-      z-index: 2;
-      max-width: 800px;
-      padding: 20px;
-    }
-
-    .topo h1 {
+    header h1 {
       font-size: 3rem;
       margin-bottom: 20px;
     }
 
-    .topo p {
+    header p {
       font-size: 1.3rem;
-      margin-bottom: 30px;
+      max-width: 700px;
+      margin: auto;
     }
 
     .botao {
-      background-color: #00cc66;
-      padding: 12px 24px;
-      color: #fff;
+      display: inline-block;
+      margin-top: 30px;
+      padding: 14px 28px;
+      background: #00ffcc;
+      color: #000;
       text-decoration: none;
       font-weight: bold;
-      border-radius: 8px;
-      transition: background 0.3s;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
     }
 
     .botao:hover {
-      background-color: #00b359;
+      transform: scale(1.05);
     }
 
     section {
       padding: 60px 20px;
-      max-width: 1000px;
+      max-width: 1100px;
       margin: auto;
     }
 
     h2 {
       text-align: center;
-      font-size: 2rem;
-      margin-bottom: 30px;
-      color: #00cc66;
+      font-size: 2.4rem;
+      color: #00ffcc;
+      margin-bottom: 40px;
     }
 
-    .servicos ul {
-      list-style: none;
+    .servicos {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      font-size: 1.1rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      text-align: center;
     }
 
-    .servicos li::before {
-      content: "✔ ";
-      color: #00cc66;
+    .servico {
+      background: #1b1b1b;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px #222;
+      transition: transform 0.3s;
+    }
+
+    .servico:hover {
+      transform: translateY(-5px);
+    }
+
+    .servico i {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: #00ffcc;
     }
 
     .galeria {
@@ -102,7 +107,12 @@
     .galeria img {
       width: 300px;
       border-radius: 10px;
-      border: 2px solid #333;
+      border: 2px solid #00ffcc33;
+      transition: transform 0.3s;
+    }
+
+    .galeria img:hover {
+      transform: scale(1.05);
     }
 
     .contato {
@@ -110,69 +120,80 @@
     }
 
     .contato p {
-      margin-top: 15px;
+      margin-top: 20px;
       font-size: 1.2rem;
     }
 
-    @media (max-width: 768px) {
-      .servicos ul {
-        grid-template-columns: 1fr;
-      }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      font-size: 0.9rem;
+      color: #888;
+    }
 
-      .topo h1 {
+    @media (max-width: 600px) {
+      header h1 {
         font-size: 2rem;
       }
 
-      .topo p {
-        font-size: 1.1rem;
+      header p {
+        font-size: 1rem;
+      }
+
+      .galeria img {
+        width: 90%;
       }
     }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
-  <!-- TOPO -->
-  <section class="topo">
-    <div class="conteudo">
-      <h1>Criação de Sites e Design para Vendas Online</h1>
-      <p>Transforme sua presença digital com design profissional, páginas que vendem e automação</p>
-      <a class="botao" href="https://wa.me/5522998747813?text=Quero%20saber%20mais%20sobre%20o%20seu%20trabalho" target="_blank">
-        Faça seu orçamento aqui
-      </a>
-    </div>
-  </section>
-
-  <!-- SERVIÇOS -->
-  <section class="servicos">
-    <h2>Serviços que eu ofereço</h2>
-    <ul>
-      <li>Design gráfico (logos, banners, posts para redes sociais)</li>
-      <li>Criação de capas para ebooks, cursos e vídeos</li>
-      <li>Web design (design de sites, landing pages)</li>
-      <li>Edição de vídeo (para YouTube, Instagram, TikTok)</li>
-      <li>Criação de identidade visual</li>
-      <li>Criação de artes para tráfego pago</li>
-    </ul>
-  </section>
-
-  <!-- PORTFÓLIO -->
-  <section class="portfolio">
-    <h2>Alguns trabalhos realizados</h2>
-    <div class="galeria">
-      <img src="assets/print1.jpg" alt="Print 1">
-      <img src="assets/print2.jpg" alt="Print 2">
-      <img src="assets/print3.jpg" alt="Print 3">
-    </div>
-  </section>
-
-  <!-- CONTATO -->
-  <section class="contato">
-    <h2>Entre em contato</h2>
+  <header>
+    <h1>Transforme Sua Presença Online</h1>
+    <p>Especialista em design, vídeo, marketing digital e criação de páginas que convertem!</p>
     <a class="botao" href="https://wa.me/5522998747813?text=Quero%20saber%20mais%20sobre%20o%20seu%20trabalho" target="_blank">
-      Falar pelo WhatsApp
+      Faça seu orçamento aqui
+    </a>
+  </header>
+
+  <section>
+    <h2>Serviços</h2>
+    <div class="servicos">
+      <div class="servico"><i class="fas fa-laptop-code"></i> Desenvolvimento de lojas virtuais</div>
+      <div class="servico"><i class="fas fa-paint-brush"></i> Design gráfico (logos, banners, posts)</div>
+      <div class="servico"><i class="fas fa-book-open"></i> Capas para ebooks, cursos e vídeos</div>
+      <div class="servico"><i class="fas fa-code"></i> Web design (sites e landing pages)</div>
+      <div class="servico"><i class="fas fa-video"></i> Edição de vídeo (YouTube, Instagram, TikTok)</div>
+      <div class="servico"><i class="fas fa-lightbulb"></i> Criação de identidade visual</div>
+      <div class="servico"><i class="fas fa-bullhorn"></i> Artes para tráfego pago</div>
+      <div class="servico"><i class="fas fa-globe"></i> Criação de sites e landing pages</div>
+      <div class="servico"><i class="fas fa-share-alt"></i> Gestão de redes sociais</div>
+      <div class="servico"><i class="fas fa-chart-line"></i> Consultoria em marketing</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Portfólio</h2>
+    <div class="galeria">
+      <img src="assets/print1.jpg" alt="Projeto 1">
+      <img src="assets/print2.jpg" alt="Projeto 2">
+      <img src="assets/print3.jpg" alt="Projeto 3">
+    </div>
+  </section>
+
+  <section class="contato">
+    <h2>Entre em Contato</h2>
+    <a class="botao" href="https://wa.me/5522998747813?text=Quero%20saber%20mais%20sobre%20o%20seu%20trabalho" target="_blank">
+      Fale comigo no WhatsApp
     </a>
     <p>📞 +55 22 99874-7813</p>
   </section>
+
+  <footer>
+    © 2025 - Todos os direitos reservados - Seu Nome
+  </footer>
 
 </body>
 </html>
