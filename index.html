@@ -2,31 +2,156 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfólio - Criação de Sites</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfólio Criativo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #111;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    .topo {
+      background: url('assets/fundo-topo.jpg') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .topo::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    .topo .conteudo {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 20px;
+    }
+
+    .topo h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .topo p {
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+    }
+
+    .botao {
+      background-color: #00cc66;
+      padding: 12px 24px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    .botao:hover {
+      background-color: #00b359;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: #00cc66;
+    }
+
+    .servicos ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      font-size: 1.1rem;
+    }
+
+    .servicos li::before {
+      content: "✔ ";
+      color: #00cc66;
+    }
+
+    .galeria {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .galeria img {
+      width: 300px;
+      border-radius: 10px;
+      border: 2px solid #333;
+    }
+
+    .contato {
+      text-align: center;
+    }
+
+    .contato p {
+      margin-top: 15px;
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 768px) {
+      .servicos ul {
+        grid-template-columns: 1fr;
+      }
+
+      .topo h1 {
+        font-size: 2rem;
+      }
+
+      .topo p {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
   <!-- TOPO -->
   <section class="topo">
-    <div class="overlay">
-      <h1>Criação de Landing Pages e Automação de Vendas</h1>
-      <p>Transforme visitantes em clientes com páginas otimizadas e modernas</p>
+    <div class="conteudo">
+      <h1>Criação de Sites e Design para Vendas Online</h1>
+      <p>Transforme sua presença digital com design profissional, páginas que vendem e automação</p>
       <a class="botao" href="https://wa.me/5522998747813?text=Quero%20saber%20mais%20sobre%20o%20seu%20trabalho" target="_blank">
         Faça seu orçamento aqui
       </a>
     </div>
   </section>
 
-  <!-- SOBRE -->
-  <section class="sobre">
-    <h2>O que eu faço</h2>
+  <!-- SERVIÇOS -->
+  <section class="servicos">
+    <h2>Serviços que eu ofereço</h2>
     <ul>
-      <li>✔ Landing Pages profissionais</li>
-      <li>✔ Páginas de Vendas de alta conversão</li>
-      <li>✔ Cardápios Online para delivery</li>
-      <li>✔ Automação de vendas no WhatsApp e Instagram</li>
+      <li>Design gráfico (logos, banners, posts para redes sociais)</li>
+      <li>Criação de capas para ebooks, cursos e vídeos</li>
+      <li>Web design (design de sites, landing pages)</li>
+      <li>Edição de vídeo (para YouTube, Instagram, TikTok)</li>
+      <li>Criação de identidade visual</li>
+      <li>Criação de artes para tráfego pago</li>
     </ul>
   </section>
 
@@ -34,15 +159,15 @@
   <section class="portfolio">
     <h2>Alguns trabalhos realizados</h2>
     <div class="galeria">
-      <img src="assets/print1.jpg" alt="Trabalho 1" />
-      <img src="assets/print2.jpg" alt="Trabalho 2" />
-      <img src="assets/print3.jpg" alt="Trabalho 3" />
+      <img src="assets/print1.jpg" alt="Print 1">
+      <img src="assets/print2.jpg" alt="Print 2">
+      <img src="assets/print3.jpg" alt="Print 3">
     </div>
   </section>
 
   <!-- CONTATO -->
   <section class="contato">
-    <h2>Entre em Contato</h2>
+    <h2>Entre em contato</h2>
     <a class="botao" href="https://wa.me/5522998747813?text=Quero%20saber%20mais%20sobre%20o%20seu%20trabalho" target="_blank">
       Falar pelo WhatsApp
     </a>
@@ -51,4 +176,3 @@
 
 </body>
 </html>
- 
