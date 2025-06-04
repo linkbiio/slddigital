@@ -17,6 +17,11 @@
       position: relative;
       min-height: 100vh;
       z-index: 0;
+      color: #fff;
+    }
+
+    body, h1, h2, h3, h4, h5, h6, p, a, div, span {
+      color: #fff;
     }
 
     .bg-wrapper {
@@ -51,7 +56,6 @@
     .conteudo-header {
       position: relative;
       z-index: 2;
-      color: #fff;
     }
 
     header h1 {
@@ -75,6 +79,7 @@
       font-weight: bold;
       border-radius: 12px;
       box-shadow: 0 0 15px #00ffcc88;
+      animation: pulse 2s infinite;
       transition: all 0.3s ease;
     }
 
@@ -83,12 +88,23 @@
       box-shadow: 0 0 25px #00ffcc;
     }
 
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 15px #00ffcc88;
+      }
+      50% {
+        box-shadow: 0 0 25px #00ffcc;
+      }
+      100% {
+        box-shadow: 0 0 15px #00ffcc88;
+      }
+    }
+
     section {
       padding: 80px 20px;
       max-width: 1100px;
       margin: auto;
       animation: fadeIn 1s ease-in;
-      color: #fff;
     }
 
     @keyframes fadeIn {
@@ -185,7 +201,6 @@
   </style>
 </head>
 <body>
-  <!-- Fundo e overlay global -->
   <div class="bg-wrapper"></div>
   <div class="bg-overlay"></div>
 
@@ -204,14 +219,10 @@
     <div class="servicos">
       <div class="servico"><i class="fas fa-laptop-code"></i><br> Desenvolvimento de lojas virtuais</div>
       <div class="servico"><i class="fas fa-paint-brush"></i><br> Design gráfico (logos, banners, posts)</div>
-  
-    
       <div class="servico"><i class="fas fa-video"></i><br> Edição de vídeo (YouTube, Instagram, TikTok)</div>
       <div class="servico"><i class="fas fa-lightbulb"></i><br> Criação de identidade visual</div>
-    
       <div class="servico"><i class="fas fa-globe"></i><br> Criação de sites e landing pages</div>
       <div class="servico"><i class="fas fa-share-alt"></i><br> Gestão de redes sociais</div>
-   
     </div>
   </section>
 
@@ -229,7 +240,6 @@
     <a class="botao" href="https://wa.me/5522998747813?text=Quero%20saber%20mais%20sobre%20o%20seu%20trabalho" target="_blank">
       Fale comigo no WhatsApp
     </a>
-  
   </section>
 
   <footer>
