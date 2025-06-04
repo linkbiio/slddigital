@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Seu Nome | Soluções Criativas</title>
   <style>
     * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+      margin: 0; padding: 0; box-sizing: border-box;
     }
-
     body {
       font-family: 'Segoe UI', sans-serif;
       background-color: #0a0a0a;
       color: #fff;
       line-height: 1.6;
     }
-
     header {
       background: linear-gradient(120deg, #6a00f4, #ff4ecd, #00c3ff);
       background-size: 600% 600%;
@@ -25,24 +21,20 @@
       padding: 80px 20px;
       text-align: center;
     }
-
     @keyframes gradient {
       0% {background-position: 0% 50%;}
       50% {background-position: 100% 50%;}
       100% {background-position: 0% 50%;}
     }
-
     header h1 {
       font-size: 3rem;
       margin-bottom: 20px;
     }
-
     header p {
       font-size: 1.3rem;
       max-width: 700px;
       margin: auto;
     }
-
     .botao {
       display: inline-block;
       margin-top: 30px;
@@ -54,22 +46,88 @@
       border-radius: 10px;
       transition: transform 0.3s ease;
     }
-
     .botao:hover {
       transform: scale(1.05);
     }
-
     section {
       padding: 60px 20px;
       max-width: 1100px;
       margin: auto;
+      border-radius: 12px;
+      color: #fff;
+      overflow: hidden;
     }
-
     h2 {
       text-align: center;
       font-size: 2.4rem;
-      color: #00ffcc;
       margin-bottom: 40px;
+      font-weight: 700;
+      text-shadow: 0 0 8px rgba(0,0,0,0.5);
+    }
+    /* Gradientes animados distintos para cada seção */
+    .animada-servicos {
+      background: linear-gradient(120deg, #ff6a00, #ff4ecd, #ffbb00);
+      background-size: 600% 600%;
+      animation: gradientServicos 15s ease infinite;
+    }
+    @keyframes gradientServicos {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+    .animada-portfolio {
+      background: linear-gradient(120deg, #0099ff, #00ffaa, #0033cc);
+      background-size: 600% 600%;
+      animation: gradientPortfolio 15s ease infinite;
+    }
+    @keyframes gradientPortfolio {
+      0% {background-position: 100% 50%;}
+      50% {background-position: 0% 50%;}
+      100% {background-position: 100% 50%;}
+    }
+    .animada-contato {
+      background: linear-gradient(120deg, #aa00ff, #ff44ff, #550077);
+      background-size: 600% 600%;
+      animation: gradientContato 15s ease infinite;
+      text-align: center;
+    }
+    @keyframes gradientContato {
+      0% {background-position: 50% 0%;}
+      50% {background-position: 50% 100%;}
+      100% {background-position: 50% 0%;}
+    }
+    /* Animação fade-in com slide-up */
+    .fade-slide-up {
+      opacity: 0;
+      transform: translateY(20px);
+      animation-fill-mode: forwards;
+      animation-name: fadeSlideUp;
+      animation-duration: 1s;
+      animation-timing-function: ease-out;
+    }
+    .fade-slide-up.delay-1 {
+      animation-delay: 0.2s;
+    }
+    .fade-slide-up.delay-2 {
+      animation-delay: 0.4s;
+    }
+    .fade-slide-up.delay-3 {
+      animation-delay: 0.6s;
+    }
+    .fade-slide-up.delay-4 {
+      animation-delay: 0.8s;
+    }
+    .fade-slide-up.delay-5 {
+      animation-delay: 1s;
+    }
+    .fade-slide-up.delay-6 {
+      animation-delay: 1.2s;
+    }
+    @keyframes fadeSlideUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .servicos {
@@ -78,52 +136,45 @@
       gap: 25px;
       text-align: center;
     }
-
     .servico {
       background: #1b1b1b;
       padding: 25px;
       border-radius: 12px;
       box-shadow: 0 0 10px #222;
       transition: transform 0.3s;
+      color: #fff;
     }
-
     .servico:hover {
       transform: translateY(-5px);
     }
-
     .servico i {
       font-size: 2.5rem;
       margin-bottom: 15px;
-      color: #00ffcc;
+      color: #ffbb00;
+      filter: drop-shadow(0 0 3px #ffbb00);
     }
-
     .galeria {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
     }
-
     .galeria img {
       width: 300px;
       border-radius: 10px;
       border: 2px solid #00ffcc33;
       transition: transform 0.3s;
+      box-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
     }
-
     .galeria img:hover {
       transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0, 255, 204, 0.9);
     }
-
-    .contato {
-      text-align: center;
-    }
-
     .contato p {
       margin-top: 20px;
       font-size: 1.2rem;
+      text-shadow: 0 0 5px #fff;
     }
-
     footer {
       text-align: center;
       padding: 20px;
@@ -131,77 +182,91 @@
       font-size: 0.9rem;
       color: #888;
     }
-
-    /* Novo estilo para seções animadas */
-    .animada {
-      background: linear-gradient(120deg, #6a00f4, #ff4ecd, #00c3ff);
-      background-size: 600% 600%;
-      animation: gradient 15s ease infinite;
-      color: #fff;
-    }
-
     @media (max-width: 600px) {
       header h1 {
         font-size: 2rem;
       }
-
       header p {
         font-size: 1rem;
       }
-
       .galeria img {
         width: 90%;
       }
     }
   </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
 </head>
 <body>
-
   <header>
     <h1>Transforme Sua Presença Online</h1>
     <p>Especialista em design, vídeo, marketing digital e criação de páginas que convertem!</p>
-    <a class="botao" href="https://wa.me/5522998747813?text=Quero%20saber%20mais%20sobre%20o%20seu%20trabalho" target="_blank">
-      Faça seu orçamento aqui
-    </a>
+    <a
+      class="botao"
+      href="https://wa.me/5522998747813?text=Quero%20saber%20mais%20sobre%20o%20seu%20trabalho"
+      target="_blank"
+      >Faça seu orçamento aqui</a
+    >
   </header>
 
-  <section class="animada">
-    <h2>Serviços</h2>
+  <section class="animada-servicos">
+    <h2 class="fade-slide-up delay-1">Serviços</h2>
     <div class="servicos">
-      <div class="servico"><i class="fas fa-laptop-code"></i> Desenvolvimento de lojas virtuais</div>
-      <div class="servico"><i class="fas fa-paint-brush"></i> Design gráfico (logos, banners, posts)</div>
-      <div class="servico"><i class="fas fa-book-open"></i> Capas para ebooks, cursos e vídeos</div>
-      <div class="servico"><i class="fas fa-code"></i> Web design (sites e landing pages)</div>
-      <div class="servico"><i class="fas fa-video"></i> Edição de vídeo (YouTube, Instagram, TikTok)</div>
-      <div class="servico"><i class="fas fa-lightbulb"></i> Criação de identidade visual</div>
-      <div class="servico"><i class="fas fa-bullhorn"></i> Artes para tráfego pago</div>
-      <div class="servico"><i class="fas fa-globe"></i> Criação de sites e landing pages</div>
-      <div class="servico"><i class="fas fa-share-alt"></i> Gestão de redes sociais</div>
-      <div class="servico"><i class="fas fa-chart-line"></i> Consultoria em marketing</div>
+      <div class="servico fade-slide-up delay-2">
+        <i class="fas fa-laptop-code"></i> Desenvolvimento de lojas virtuais
+      </div>
+      <div class="servico fade-slide-up delay-3">
+        <i class="fas fa-paint-brush"></i> Design gráfico (logos, banners, posts)
+      </div>
+      <div class="servico fade-slide-up delay-4">
+        <i class="fas fa-book-open"></i> Capas para ebooks, cursos e vídeos
+      </div>
+      <div class="servico fade-slide-up delay-5">
+        <i class="fas fa-code"></i> Web design (sites e landing pages)
+      </div>
+      <div class="servico fade-slide-up delay-6">
+        <i class="fas fa-video"></i> Edição de vídeo (YouTube, Instagram, TikTok)
+      </div>
+      <!-- Pode repetir fade-slide-up e delays para outros serviços se quiser -->
     </div>
   </section>
 
-  <section class="animada">
-    <h2>Portfólio</h2>
+  <section class="animada-portfolio">
+    <h2 class="fade-slide-up delay-1">Portfólio</h2>
     <div class="galeria">
-      <img src="assets/print1.jpg" alt="Projeto 1">
-      <img src="assets/print2.jpg" alt="Projeto 2">
-      <img src="assets/print3.jpg" alt="Projeto 3">
+      <img
+        class="fade-slide-up delay-2"
+        src="assets/print1.jpg"
+        alt="Projeto 1"
+      />
+      <img
+        class="fade-slide-up delay-3"
+        src="assets/print2.jpg"
+        alt="Projeto 2"
+      />
+      <img
+        class="fade-slide-up delay-4"
+        src="assets/print3.jpg"
+        alt="Projeto 3"
+      />
     </div>
   </section>
 
-  <section class="contato animada">
-    <h2>Entre em Contato</h2>
-    <a class="botao" href="https://wa.me/5522998747813?text=Quero%20saber%20mais%20sobre%20o%20seu%20trabalho" target="_blank">
-      Fale comigo no WhatsApp
-    </a>
-    <p>📞 +55 22 99874-7813</p>
+  <section class="contato animada-contato">
+    <h2 class="fade-slide-up delay-1">Entre em Contato</h2>
+    <a
+      class="botao fade-slide-up delay-2"
+      href="https://wa.me/5522998747813?text=Quero%20saber%20mais%20sobre%20o%20seu%20trabalho"
+      target="_blank"
+      >Fale comigo no WhatsApp</a
+    >
+    <p class="fade-slide-up delay-3">📞 +55 22 99874-7813</p>
   </section>
 
   <footer>
     © 2025 - Todos os direitos reservados - Seu Nome
   </footer>
-
 </body>
 </html>
