@@ -18,8 +18,6 @@
       min-height: 100vh;
       z-index: 0;
       color: #fff;
-      scroll-behavior: smooth;
-      padding-top: 70px; /* espaço para cabeçalho fixo */
     }
 
     body, h1, h2, h3, h4, h5, h6, p, a, div, span {
@@ -53,8 +51,6 @@
       padding: 100px 20px 80px;
       text-align: center;
       box-shadow: 0 5px 15px #00000060;
-      position: relative;
-      z-index: 2;
     }
 
     .conteudo-header {
@@ -105,7 +101,7 @@
     }
 
     section {
-      padding: 100px 20px;
+      padding: 80px 20px;
       max-width: 1100px;
       margin: auto;
       animation: fadeIn 1s ease-in;
@@ -185,96 +181,6 @@
       color: #aaa;
     }
 
-    /* Cabeçalho fixo no topo */
-    nav#topo-fixo {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: #111a1acc;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.8);
-      z-index: 9999;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 60px;
-      backdrop-filter: saturate(180%) blur(10px);
-      -webkit-backdrop-filter: saturate(180%) blur(10px);
-      padding: 0 20px;
-    }
-
-    nav#topo-fixo ul {
-      list-style: none;
-      display: flex;
-      gap: 25px;
-    }
-
-    nav#topo-fixo ul li {
-    }
-
-    nav#topo-fixo ul li a {
-      color: #00ffcc;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: color 0.3s;
-      padding: 5px 10px;
-      border-radius: 8px;
-    }
-
-    nav#topo-fixo ul li a:hover,
-    nav#topo-fixo ul li a.active {
-      color: #00ffaa;
-      background: rgba(0, 255, 204, 0.15);
-    }
-
-    /* Foto flutuante fixa com texto */
-    .foto-flutuante {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      width: 110px;
-      text-align: center;
-      cursor: pointer;
-      z-index: 10000;
-      user-select: none;
-    }
-
-    .foto-flutuante img {
-      width: 110px;
-      height: 110px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #00ffcc;
-      box-shadow: 0 0 15px #00ffccaa;
-      transition: transform 0.3s ease;
-    }
-
-    .foto-flutuante img:hover {
-      transform: scale(1.12);
-      box-shadow: 0 0 25px #00ffccdd;
-    }
-
-    .foto-flutuante p {
-      margin-top: 8px;
-      color: #00ffcc;
-      font-weight: 700;
-      font-size: 1rem;
-      text-shadow: 0 0 8px #00ffccbb;
-    }
-
-    /* Responsividade */
-
-    @media (max-width: 900px) {
-      section {
-        padding: 70px 15px;
-      }
-
-      .galeria img {
-        width: 90%;
-      }
-    }
-
     @media (max-width: 600px) {
       header h1 {
         font-size: 2.4rem;
@@ -284,32 +190,12 @@
         font-size: 1.1rem;
       }
 
+      .galeria img {
+        width: 90%;
+      }
+
       h2 {
         font-size: 2rem;
-      }
-
-      nav#topo-fixo ul {
-        gap: 15px;
-      }
-
-      nav#topo-fixo ul li a {
-        font-size: 0.9rem;
-        padding: 4px 8px;
-      }
-
-      .foto-flutuante {
-        width: 90px;
-        right: 20px;
-        bottom: 20px;
-      }
-
-      .foto-flutuante img {
-        width: 90px;
-        height: 90px;
-      }
-
-      .foto-flutuante p {
-        font-size: 0.9rem;
       }
     }
   </style>
@@ -318,118 +204,77 @@
   <div class="bg-wrapper"></div>
   <div class="bg-overlay"></div>
 
-  <!-- Cabeçalho fixo topo -->
-  <nav id="topo-fixo">
-    <ul>
-      <li><a href="#inicio" class="active">Início</a></li>
-      <li><a href="#servicos">Serviços</a></li>
-      <li><a href="#trabalhos">Trabalhos</a></li>
-      <li><a href="#depoimentos">Depoimentos</a></li>
-      <li><a href="#contato">Contato</a></li>
-    </ul>
-  </nav>
-
-  <!-- Foto flutuante com link whatsapp -->
-  <a href="https://wa.me/5522998747813?text=Quero%20escalar%20meu%20negócio" target="_blank" class="foto-flutuante" aria-label="Vamos escalar seu negócio?">
-    <img src="assets/sua-foto.jpg" alt="Foto da Gaby" />
-    <p>Vamos escalar<br>seu negócio?</p>
-  </a>
-
-  <!-- Seção Início -->
-  <header id="inicio">
+  <header>
     <div class="conteudo-header">
       <h1>Transforme Sua Presença Online</h1>
       <p>Olá, sou Gaby, Especialista em design, vídeo, marketing digital e criação de páginas que convertem!</p>
-      <a href="#contato" class="botao">Vamos conversar</a>
+      <a class="botao" href="https://wa.me/5522998747813?text=Quero%20saber%20mais%20sobre%20o%20seu%20trabalho" target="_blank">
+        Faça seu orçamento aqui
+      </a>
     </div>
   </header>
 
-  <!-- Seção Serviços -->
-  <section id="servicos">
+  <section>
     <h2>Serviços</h2>
     <div class="servicos">
-      <div class="servico">
-        <i class="fa-solid fa-paintbrush"></i>
-        <h3>Design Gráfico</h3>
-        <p>Criação de logos, banners, posts e identidades visuais.</p>
-      </div>
-      <div class="servico">
-        <i class="fa-solid fa-video"></i>
-        <h3>Vídeo & Animação</h3>
-        <p>Produção e edição de vídeos profissionais e animações.</p>
-      </div>
-      <div class="servico">
-        <i class="fa-solid fa-code"></i>
-        <h3>Web Design</h3>
-        <p>Desenvolvimento de sites modernos e responsivos.</p>
-      </div>
-      <div class="servico">
-        <i class="fa-solid fa-bullhorn"></i>
-        <h3>Marketing Digital</h3>
-        <p>Campanhas que geram resultados reais para o seu negócio.</p>
-      </div>
+      <div class="servico"><i class="fas fa-laptop-code"></i><br> Desenvolvimento de lojas virtuais</div>
+      <div class="servico"><i class="fas fa-paint-brush"></i><br> Design gráfico (logos, banners, posts)</div>
+      <div class="servico"><i class="fas fa-video"></i><br> Edição de vídeo (YouTube, Instagram, TikTok)</div>
+      <div class="servico"><i class="fas fa-lightbulb"></i><br> Criação de identidade visual</div>
+      <div class="servico"><i class="fas fa-globe"></i><br> Criação de sites e landing pages</div>
+      <div class="servico"><i class="fas fa-share-alt"></i><br> Gestão de redes sociais</div>
     </div>
   </section>
 
-  <!-- Seção Trabalhos -->
-  <section id="trabalhos">
-    <h2>Trabalhos</h2>
+  <section>
+    <h2>Alguns dos meus trabalhos</h2>
     <div class="galeria">
-      <img src="assets/trabalho1.jpg" alt="Projeto 1" />
-      <img src="assets/trabalho2.jpg" alt="Projeto 2" />
-      <img src="assets/trabalho3.jpg" alt="Projeto 3" />
-      <img src="assets/trabalho4.jpg" alt="Projeto 4" />
+      <img src="assets/print1.jpg" alt="Projeto 1">
+      <img src="assets/print2.jpg" alt="Projeto 2">
+      <img src="assets/print3.jpg" alt="Projeto 3">
     </div>
   </section>
 
-  <!-- Seção Depoimentos -->
-  <section id="depoimentos">
-    <h2>Depoimentos</h2>
-    <div>
-      <blockquote>
-        <p>"Gaby transformou nossa identidade visual, superou expectativas!"</p>
-        <footer>- Cliente Satisfeito</footer>
-      </blockquote>
-      <blockquote>
-        <p>"Excelente profissional, vídeos incríveis e entrega rápida."</p>
-        <footer>- Cliente Feliz</footer>
-      </blockquote>
-    </div>
-  </section>
 
-  <!-- Seção Contato -->
-  <section id="contato">
-    <h2>Contato</h2>
-    <p>Quer trabalhar comigo? Me mande uma mensagem no WhatsApp ou e-mail!</p>
-    <p><a href="mailto:gaby@exemplo.com" style="color:#00ffcc;">gaby@exemplo.com</a></p>
-    <p><a href="https://wa.me/5522998747813" target="_blank" style="color:#00ffcc;">WhatsApp: (22) 99874-7813</a></p>
+
+
+
+  
+<section>
+  <h2>Depoimentos de Clientes</h2>
+  <div class="servicos" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px;">
+    <div class="servico" style="padding: 40px;">
+      <img src="assets/cliente1.jpg" alt="Lucas M." style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 3px solid #00ffcc;">
+      <strong style="display: block; font-size: 1.3rem; margin-bottom: 10px; color: #00ffcc;">Lucas M.</strong>
+      <p style="font-size: 1.1rem; color: #fff;">"A Gaby salvou o lançamento da minha loja! Tudo ficou muito profissional e com alta conversão. Recomendo demais."</p>
+    </div>
+    <div class="servico" style="padding: 40px;">
+      <img src="assets/cliente2.jpg" alt="Juliana R." style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 3px solid #00ffcc;">
+      <strong style="display: block; font-size: 1.3rem; margin-bottom: 10px; color: #00ffcc;">Juliana R.</strong>
+      <p style="font-size: 1.1rem; color: #fff;">"O design dos posts e vídeos ficou simplesmente impecável. Obrigada pelo carinho e dedicação, Gaby!"</p>
+    </div>
+    <div class="servico" style="padding: 40px;">
+      <img src="assets/cliente3.jpg" alt="André Silva" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 3px solid #00ffcc;">
+      <strong style="display: block; font-size: 1.3rem; margin-bottom: 10px; color: #00ffcc;">André Silva</strong>
+      <p style="font-size: 1.1rem; color: #fff;">"Trabalho rápido, criativo e muito acima das minhas expectativas. Já virei cliente fixo."</p>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+  
+  <section class="contato">
+    <h2>Entre em Contato</h2>
+    <a class="botao" href="https://wa.me/5522998747813?text=Quero%20saber%20mais%20sobre%20o%20seu%20trabalho" target="_blank">
+      Fale comigo no WhatsApp
+    </a>
   </section>
 
   <footer>
-    <p>© 2025 Gaby Designer | Todos os direitos reservados</p>
+    © 2025 - Todos os direitos reservados - Gaby Barbosa
   </footer>
-
-  <script>
-    // Highlight menu item based on scroll position
-    const sections = document.querySelectorAll('section, header');
-    const navLinks = document.querySelectorAll('nav#topo-fixo ul li a');
-
-    window.addEventListener('scroll', () => {
-      let current = '';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 80;
-        if (pageYOffset >= sectionTop) {
-          current = section.getAttribute('id') || 'inicio';
-        }
-      });
-
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').substring(1) === current) {
-          link.classList.add('active');
-        }
-      });
-    });
-  </script>
 </body>
 </html>
