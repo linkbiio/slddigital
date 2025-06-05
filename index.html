@@ -4,186 +4,385 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gaby Designer | Soluções Criativas</title>
-  
-  <!-- SEO -->
-  <meta name="description" content="Gaby Designer - Design, vídeos, páginas e soluções criativas para negócios digitais.">
-  <meta property="og:title" content="Gaby Designer | Soluções Criativas" />
-  <meta property="og:description" content="Especialista em design gráfico, edição de vídeo, landing pages e marketing digital." />
-  <meta property="og:image" content="https://seusite.com/assets/capa-gaby.jpg" />
-  <meta property="og:type" content="website" />
-
-  <!-- Font Awesome para ícones -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
-  <!-- AOS CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #111;
-      color: #fff;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
       scroll-behavior: smooth;
     }
 
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      position: relative;
+      min-height: 100vh;
+      z-index: 0;
+      color: #fff;
+      padding-top: 60px; /* espaço para o cabeçalho fixo */
+    }
+
+    body, h1, h2, h3, h4, h5, h6, p, a, div, span {
+      color: #fff;
+    }
+
+    .bg-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('assets/bg.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      z-index: -2;
+    }
+
+    .bg-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: -1;
+    }
+
+    /* Cabeçalho fixo no topo */
     nav {
       position: fixed;
       top: 0;
+      left: 0;
       width: 100%;
-      background: #000;
-      padding: 15px 0;
-      z-index: 1000;
-      box-shadow: 0 2px 8px #000;
-    }
-
-    nav ul {
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(6px);
+      z-index: 10;
+      box-shadow: 0 2px 10px #000a;
       display: flex;
       justify-content: center;
-      gap: 30px;
-      list-style: none;
-      margin: 0;
-      padding: 0;
+      padding: 10px 20px;
     }
-
-    nav a {
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+    nav ul li a {
       color: #00ffcc;
       text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.3s;
+      cursor: pointer;
+    }
+    nav ul li a:hover {
+      color: #00cca9;
+    }
+
+    header {
+      padding: 100px 20px 80px;
+      text-align: center;
+      box-shadow: 0 5px 15px #00000060;
+      margin-bottom: 80px;
+    }
+
+    .conteudo-header {
+      position: relative;
+      z-index: 2;
+    }
+
+    header h1 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+    }
+
+    header p {
+      font-size: 1.4rem;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .botao {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 14px 28px;
+      background: #00ffcc;
+      color: #000;
+      text-decoration: none;
       font-weight: bold;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #00ffcc88;
+      animation: pulse 2s infinite;
+      transition: all 0.3s ease;
+    }
+
+    .botao:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 25px #00ffcc;
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 15px #00ffcc88;
+      }
+      50% {
+        box-shadow: 0 0 25px #00ffcc;
+      }
+      100% {
+        box-shadow: 0 0 15px #00ffcc88;
+      }
     }
 
     section {
       padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto  auto 80px auto; /* separa as seções com mais espaçamento */
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2.8rem;
+      color: #00ffcc;
+      margin-bottom: 50px;
+    }
+
+    .servicos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
       text-align: center;
     }
 
-    h1, h2 {
+    .servico {
+      background: #1b1b1b;
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: 0 0 10px #222;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .servico:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 25px #00ffcc33;
+    }
+
+    .servico i {
+      font-size: 2.8rem;
+      margin-bottom: 18px;
       color: #00ffcc;
-      margin-bottom: 20px;
     }
 
-    .servico, .trabalho, .depoimento {
-      max-width: 800px;
-      margin: 20px auto;
-      background: #1a1a1a;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px #00ffcc33;
+    .galeria {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
     }
 
-    .botao {
-      background: #00ffcc;
-      color: #000;
-      padding: 12px 24px;
-      border: none;
-      border-radius: 6px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s;
+    .galeria img {
+      width: 300px;
+      border-radius: 12px;
+      border: 2px solid #00ffcc33;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .botao:hover {
-      background: #00ccaa;
+    .galeria img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #00ffcc55;
     }
 
-    /* WhatsApp flutuante */
-    .whatsapp-float {
+    .contato {
+      text-align: center;
+    }
+
+    .contato p {
+      margin-top: 25px;
+      font-size: 1.3rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #111;
+      font-size: 0.95rem;
+      color: #aaa;
+    }
+
+    /* FOTO FLUTUANTE e texto */
+    .foto-flutuante {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      z-index: 999;
-      background: #00ffcc;
-      padding: 14px;
+      background: transparent;
+      text-align: center;
+      z-index: 15;
+      cursor: pointer;
+      user-select: none;
+      width: 120px;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .foto-flutuante img {
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
-      box-shadow: 0 0 12px #00ffcc;
-      transition: 0.3s;
+      border: 3px solid #00ffcc;
+      box-shadow: 0 0 15px #00ffccbb;
+      transition: transform 0.3s ease;
     }
-
-    .whatsapp-float:hover {
+    .foto-flutuante img:hover {
       transform: scale(1.1);
+      box-shadow: 0 0 25px #00ffcc;
+    }
+    .foto-flutuante p {
+      margin-top: 8px;
+      color: #00ffcc;
+      font-weight: 700;
+      font-size: 1rem;
+      text-shadow: 0 0 6px #000;
     }
 
-    .form-contato input,
-    .form-contato textarea {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 10px;
-      border: none;
-      border-radius: 6px;
-      background: #222;
-      color: #fff;
-    }
-
+    /* Responsividade melhorada */
     @media (max-width: 600px) {
-      nav ul {
-        flex-direction: column;
-        gap: 15px;
+      header h1 {
+        font-size: 2.4rem;
+      }
+
+      header p {
+        font-size: 1.1rem;
+      }
+
+      .galeria img {
+        width: 90%;
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+
+      .servicos {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .servico {
+        padding: 20px;
+      }
+
+      section {
+        padding: 50px 15px;
+        margin-bottom: 60px;
+      }
+
+      .foto-flutuante {
+        width: 90px;
+        bottom: 15px;
+        right: 15px;
+      }
+
+      .foto-flutuante img {
+        width: 90px;
+        height: 90px;
+      }
+
+      .foto-flutuante p {
+        font-size: 0.9rem;
       }
     }
   </style>
 </head>
 <body>
+  <div class="bg-wrapper"></div>
+  <div class="bg-overlay"></div>
 
-<!-- MENU -->
-<nav>
-  <ul>
-    <li><a href="#servicos">Serviços</a></li>
-    <li><a href="#trabalhos">Portfólio</a></li>
-    <li><a href="#depoimentos">Depoimentos</a></li>
-    <li><a href="#contato">Contato</a></li>
-  </ul>
-</nav>
+  <!-- CABEÇALHO FIXO COM LINKS -->
+  <nav>
+    <ul>
+      <li><a href="#header">Início</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#galeria">Trabalhos</a></li>
+      <li><a href="#depoimentos">Depoimentos</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
 
-<!-- INÍCIO -->
-<section id="inicio" style="padding-top:120px;" data-aos="fade-up">
-  <h1>Gaby Designer</h1>
-  <p>Soluções criativas para o seu negócio digital!</p>
-</section>
+  <header id="header">
+    <div class="conteudo-header">
+      <h1>Transforme Sua Presença Online</h1>
+      <p>Olá, sou Gaby, Especialista em design, vídeo, marketing digital e criação de páginas que convertem!</p>
+      <a class="botao" href="https://wa.me/5522998747813?text=Quero%20saber%20mais%20sobre%20o%20seu%20trabalho!" target="_blank" rel="noopener noreferrer">Fale Comigo</a>
+    </div>
+  </header>
 
-<!-- SERVIÇOS -->
-<section id="servicos" data-aos="fade-up">
-  <h2>O que eu posso fazer por você</h2>
-  <div class="servico">Criação de identidade visual profissional</div>
-  <div class="servico">Edição de vídeos para redes sociais e anúncios</div>
-  <div class="servico">Landing pages e páginas de vendas personalizadas</div>
-</section>
+  <section id="servicos">
+    <h2>Serviços que Ofereço</h2>
+    <div class="servicos">
+      <div class="servico">
+        <i class="fa-solid fa-paintbrush"></i>
+        <h3>Design Visual</h3>
+        <p>Criação de identidade visual que destaca sua marca no mercado.</p>
+      </div>
+      <div class="servico">
+        <i class="fa-solid fa-video"></i>
+        <h3>Vídeos Profissionais</h3>
+        <p>Produção e edição de vídeos para campanhas, YouTube e redes sociais.</p>
+      </div>
+      <div class="servico">
+        <i class="fa-solid fa-bullhorn"></i>
+        <h3>Marketing Digital</h3>
+        <p>Estratégias eficazes para aumentar seu alcance e engajamento.</p>
+      </div>
+      <div class="servico">
+        <i class="fa-solid fa-laptop-code"></i>
+        <h3>Criação de Páginas</h3>
+        <p>Landing pages e sites otimizados para conversão e SEO.</p>
+      </div>
+    </div>
+  </section>
 
-<!-- PORTFÓLIO -->
-<section id="trabalhos" data-aos="fade-up">
-  <h2>Meus Trabalhos</h2>
-  <div class="trabalho">[Imagem ou descrição de projeto]</div>
-  <div class="trabalho">[Imagem ou descrição de outro projeto]</div>
-</section>
+  <section id="galeria">
+    <h2>Portfólio de Projetos</h2>
+    <div class="galeria">
+      <img src="assets/projeto1.jpg" alt="Projeto 1" />
+      <img src="assets/projeto2.jpg" alt="Projeto 2" />
+      <img src="assets/projeto3.jpg" alt="Projeto 3" />
+      <img src="assets/projeto4.jpg" alt="Projeto 4" />
+    </div>
+  </section>
 
-<!-- DEPOIMENTOS -->
-<section id="depoimentos" data-aos="fade-up">
-  <h2>O que dizem sobre meu trabalho</h2>
-  <div class="depoimento">"A Gaby transformou minha marca. Super recomendo!"</div>
-  <div class="depoimento">"Rápida, criativa e muito profissional. Excelente trabalho."</div>
-</section>
+  <section id="depoimentos">
+    <h2>Depoimentos</h2>
+    <p style="max-width: 600px; margin: auto; font-style: italic; text-align: center;">
+      "A Gaby transformou completamente minha marca, seu trabalho é incrível e profissional!"
+    </p>
+    <p style="max-width: 600px; margin: 20px auto 0; font-style: italic; text-align: center;">
+      "A atenção aos detalhes e a dedicação dela fazem toda a diferença."
+    </p>
+  </section>
 
-<!-- CONTATO -->
-<section id="contato" data-aos="fade-up">
-  <h2>Fale Comigo</h2>
-  <p>Me chame no WhatsApp ou envie sua mensagem pelo formulário:</p>
+  <section id="contato">
+    <h2>Entre em Contato</h2>
+    <p>Quer conversar? Envie uma mensagem e vamos escalar seu negócio!</p>
+    <a class="botao" href="https://wa.me/5522998747813?text=Oi%20Gaby,%20quero%20saber%20mais%20sobre%20seus%20serviços!" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+  </section>
 
-  <form action="mailto:seuemail@dominio.com" method="post" enctype="text/plain" class="form-contato">
-    <input type="text" name="nome" placeholder="Seu nome" required />
-    <input type="email" name="email" placeholder="Seu e-mail" required />
-    <textarea name="mensagem" rows="5" placeholder="Sua mensagem"></textarea>
-    <button type="submit" class="botao">Enviar Mensagem</button>
-  </form>
-</section>
+  <footer>
+    &copy; 2025 Gaby Designer. Todos os direitos reservados.
+  </footer>
 
-<!-- BOTÃO WHATSAPP -->
-<a href="https://wa.me/5522998747813?text=Quero%20saber%20mais%20sobre%20o%20seu%20trabalho" 
-   class="whatsapp-float" target="_blank">
-  <i class="fab fa-whatsapp" style="font-size:24px; color:#000;"></i>
-</a>
-
-<!-- AOS JS -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>AOS.init();</script>
-
+  <!-- FOTO FLUTUANTE FIXA COM LINK PARA WHATSAPP -->
+  <a href="https://wa.me/5522998747813?text=Oi%20Gaby,%20quero%20escala%20meu%20negócio!" target="_blank" rel="noopener noreferrer" class="foto-flutuante" title="Vamos escalar seu negócio?">
+    <img src="assets/foto-gaby.jpg" alt="Foto Gaby" />
+    <p>Vamos escalar seu negócio?</p>
+  </a>
 </body>
 </html>
