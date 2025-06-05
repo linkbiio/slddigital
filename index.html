@@ -1,5 +1,126 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+-----------------------------------------------------------
+
+  <header id="topo-fixo">
+  <div class="container">
+    <img src="assets/sua-foto.jpg" alt="Sua Foto" class="foto-perfil" />
+    <h1 class="nome">Gaby Designer</h1>
+    <nav>
+      <ul>
+        <li><a href="#inicio" class="active">Início</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#trabalhos">Trabalhos</a></li>
+        <li><a href="#depoimentos">Depoimentos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  #topo-fixo {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #000;
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.8);
+    z-index: 9999;
+  }
+
+  #topo-fixo .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .foto-perfil {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+  }
+
+  .nome {
+    font-size: 1.5rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  nav ul {
+    display: flex;
+    list-style: none;
+    margin-left: auto;
+    gap: 25px;
+  }
+
+  nav ul li a {
+    color: #ccc;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+
+  nav ul li a:hover,
+  nav ul li a.active {
+    color: #00ffcc;
+    border-bottom: 2px solid #00ffcc;
+    padding-bottom: 2px;
+  }
+
+  @media (max-width: 600px) {
+    #topo-fixo .container {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    nav ul {
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+</style>
+
+<script>
+  // Código para destacar link ativo conforme a rolagem da página
+  const sections = document.querySelectorAll('section, header');
+  const navLinks = document.querySelectorAll('#topo-fixo nav ul li a');
+
+  window.addEventListener('scroll', () => {
+    let current = 'inicio';
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 100;
+      if (pageYOffset >= sectionTop) {
+        current = section.getAttribute('id') || 'inicio';
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href').substring(1) === current) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
+
+
+
+
+
+
+
+
+  ---------------------------------------------------------
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
