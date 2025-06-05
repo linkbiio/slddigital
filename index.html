@@ -47,8 +47,41 @@
       z-index: -1;
     }
 
+    /* Novo cabeçalho estilo Netflix */
+    nav#netflix-header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #111;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 15px 0;
+      z-index: 10;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+      font-weight: 600;
+      font-size: 1.1rem;
+      user-select: none;
+    }
+
+    nav#netflix-header a {
+      color: #fff;
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+    }
+
+    nav#netflix-header a:hover,
+    nav#netflix-header a:focus {
+      background-color: #e50914;
+      outline: none;
+    }
+
+    /* Ajuste para o conteúdo não ficar escondido atrás do nav fixo */
     header {
-      padding: 100px 20px 80px;
+      padding: 140px 20px 80px; /* aumentei padding-top para dar espaço pro nav fixo */
       text-align: center;
       box-shadow: 0 5px 15px #00000060;
     }
@@ -197,12 +230,26 @@
       h2 {
         font-size: 2rem;
       }
+
+      nav#netflix-header {
+        gap: 20px;
+        font-size: 1rem;
+        padding: 10px 0;
+      }
     }
   </style>
 </head>
 <body>
   <div class="bg-wrapper"></div>
   <div class="bg-overlay"></div>
+
+  <!-- Cabeçalho estilo Netflix -->
+  <nav id="netflix-header">
+    <a href="#servicos">Serviços</a>
+    <a href="#trabalhos">Trabalhos</a>
+    <a href="#depoimentos">Depoimentos</a>
+    <a href="#contato">Contato</a>
+  </nav>
 
   <header>
     <div class="conteudo-header">
@@ -214,7 +261,7 @@
     </div>
   </header>
 
-  <section>
+  <section id="servicos">
     <h2>Serviços</h2>
     <div class="servicos">
       <div class="servico"><i class="fas fa-laptop-code"></i><br> Desenvolvimento de lojas virtuais</div>
@@ -226,55 +273,36 @@
     </div>
   </section>
 
-  <section>
+  <section id="trabalhos">
     <h2>Alguns dos meus trabalhos</h2>
     <div class="galeria">
-      <img src="assets/print1.jpg" alt="Projeto 1">
-      <img src="assets/print2.jpg" alt="Projeto 2">
-      <img src="assets/print3.jpg" alt="Projeto 3">
+      <img src="assets/print1.jpg" alt="Projeto 1" />
+      <img src="assets/print2.jpg" alt="Projeto 2" />
+      <img src="assets/print3.jpg" alt="Projeto 3" />
     </div>
   </section>
 
-
-
-
-
-  
-<section>
-  <h2>Depoimentos de Clientes</h2>
-  <div class="servicos" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px;">
-    <div class="servico" style="padding: 40px;">
-      <img src="assets/cliente1.jpg" alt="Lucas M." style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 3px solid #00ffcc;">
-      <strong style="display: block; font-size: 1.3rem; margin-bottom: 10px; color: #00ffcc;">Lucas M.</strong>
-      <p style="font-size: 1.1rem; color: #fff;">"A Gaby salvou o lançamento da minha loja! Tudo ficou muito profissional e com alta conversão. Recomendo demais."</p>
+  <section id="depoimentos">
+    <h2>Depoimentos de Clientes</h2>
+    <div class="servicos" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px;">
+      <div class="servico" style="padding: 40px;">
+        <img src="assets/cliente1.jpg" alt="Lucas M." style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 3px solid #00ffcc;" />
+        <strong style="display: block; font-size: 1.3rem; margin-bottom: 10px; color: #00ffcc;">Lucas M.</strong>
+        <p style="font-size: 1.1rem; color: #fff;">"A Gaby salvou o lançamento da minha loja! Tudo ficou muito profissional e com alta conversão. Recomendo demais."</p>
+      </div>
+      <div class="servico" style="padding: 40px;">
+        <img src="assets/cliente2.jpg" alt="Juliana R." style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 3px solid #00ffcc;" />
+        <strong style="display: block; font-size: 1.3rem; margin-bottom: 10px; color: #00ffcc;">Juliana R.</strong>
+        <p style="font-size: 1.1rem; color: #fff;">"O design dos posts e vídeos ficou simplesmente impecável. Obrigada pelo carinho e dedicação, Gaby!"</p>
+      </div>
+      <div class="servico" style="padding: 40px;">
+        <img src="assets/cliente3.jpg" alt="André Silva" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 3px solid #00ffcc;" />
+        <strong style="display: block; font-size: 1.3rem; margin-bottom: 10px; color: #00ffcc;">André Silva</strong>
+        <p style="font-size: 1.1rem; color: #fff;">"Trabalho rápido, criativo e muito acima das minhas expectativas. Já virei cliente fixo."</p>
+      </div>
     </div>
-    <div class="servico" style="padding: 40px;">
-      <img src="assets/cliente2.jpg" alt="Juliana R." style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 3px solid #00ffcc;">
-      <strong style="display: block; font-size: 1.3rem; margin-bottom: 10px; color: #00ffcc;">Juliana R.</strong>
-      <p style="font-size: 1.1rem; color: #fff;">"O design dos posts e vídeos ficou simplesmente impecável. Obrigada pelo carinho e dedicação, Gaby!"</p>
-    </div>
-    <div class="servico" style="padding: 40px;">
-      <img src="assets/cliente3.jpg" alt="André Silva" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 3px solid #00ffcc;">
-      <strong style="display: block; font-size: 1.3rem; margin-bottom: 10px; color: #00ffcc;">André Silva</strong>
-      <p style="font-size: 1.1rem; color: #fff;">"Trabalho rápido, criativo e muito acima das minhas expectativas. Já virei cliente fixo."</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-
-
-
-
-  
-  <section class="contato">
+  <section id="contato" class="contato">
     <h2>Entre em Contato</h2>
-    <a class="botao" href="https://wa.me/5522998747813?text=Quero%20saber%20mais%20sobre%20o%20seu%20trabalho" target="_blank">
-      Fale comigo no WhatsApp
-    </a>
-  </section>
-
-  <footer>
-    © 2025 - Todos os direitos reservados - Gaby Barbosa
-  </footer>
-</body>
-</html>
+    <a class="botao" href="https://wa
