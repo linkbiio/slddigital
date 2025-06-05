@@ -1,126 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
------------------------------------------------------------
-
-  <header id="topo-fixo">
-  <div class="container">
-    <img src="assets/sua-foto.jpg" alt="Sua Foto" class="foto-perfil" />
-    <h1 class="nome">Gaby Designer</h1>
-    <nav>
-      <ul>
-        <li><a href="#inicio" class="active">Início</a></li>
-        <li><a href="#servicos">Serviços</a></li>
-        <li><a href="#trabalhos">Trabalhos</a></li>
-        <li><a href="#depoimentos">Depoimentos</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<style>
-  #topo-fixo {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: #000;
-    color: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.8);
-    z-index: 9999;
-  }
-
-  #topo-fixo .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .foto-perfil {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #fff;
-  }
-
-  .nome {
-    font-size: 1.5rem;
-    font-weight: 700;
-    flex-shrink: 0;
-  }
-
-  nav ul {
-    display: flex;
-    list-style: none;
-    margin-left: auto;
-    gap: 25px;
-  }
-
-  nav ul li a {
-    color: #ccc;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s;
-  }
-
-  nav ul li a:hover,
-  nav ul li a.active {
-    color: #00ffcc;
-    border-bottom: 2px solid #00ffcc;
-    padding-bottom: 2px;
-  }
-
-  @media (max-width: 600px) {
-    #topo-fixo .container {
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-    }
-    nav ul {
-      gap: 15px;
-      flex-wrap: wrap;
-      justify-content: center;
-      width: 100%;
-      margin-left: 0;
-    }
-  }
-</style>
-
-<script>
-  // Código para destacar link ativo conforme a rolagem da página
-  const sections = document.querySelectorAll('section, header');
-  const navLinks = document.querySelectorAll('#topo-fixo nav ul li a');
-
-  window.addEventListener('scroll', () => {
-    let current = 'inicio';
-
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 100;
-      if (pageYOffset >= sectionTop) {
-        current = section.getAttribute('id') || 'inicio';
-      }
-    });
-
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href').substring(1) === current) {
-        link.classList.add('active');
-      }
-    });
-  });
-</script>
-
-
-
-
-
-
-
-
-  ---------------------------------------------------------
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -168,9 +47,74 @@
       z-index: -1;
     }
 
-    header {
-      padding: 100px 20px 80px;
+    /* Novo cabeçalho menor e compacto */
+    header.topo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      padding: 40px 20px;
+      background: #000;
+      box-shadow: 0 5px 15px #00000060;
       text-align: center;
+    }
+
+    .topo-imagem {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .topo-imagem:hover {
+      transform: scale(1.15) rotate(5deg);
+      box-shadow: 0 0 15px #800040cc;
+    }
+
+    .topo-texto {
+      color: #fff;
+      text-align: center;
+    }
+
+    .topo-texto h1 {
+      font-size: 3.2rem;
+      margin: 0 0 10px;
+    }
+
+    .topo-texto p {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin: 0;
+      max-width: 700px;
+    }
+
+    @media (max-width: 600px) {
+      header.topo {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .topo-imagem {
+        width: 120px;
+        height: 120px;
+      }
+
+      .topo-texto h1 {
+        font-size: 2.5rem;
+      }
+
+      .topo-texto p {
+        font-size: 1.1rem;
+      }
+    }
+
+    /* Restante do seu CSS original */
+
+    header {
+      /* removido padding e text-align para não conflitar com o novo header */
       box-shadow: 0 5px 15px #00000060;
     }
 
@@ -180,14 +124,16 @@
     }
 
     header h1 {
-      font-size: 3.5rem;
-      margin-bottom: 20px;
+      /* removido para evitar conflito */
+      /* font-size: 3.5rem; */
+      /* margin-bottom: 20px; */
     }
 
     header p {
-      font-size: 1.4rem;
-      max-width: 700px;
-      margin: auto;
+      /* removido para evitar conflito */
+      /* font-size: 1.4rem; */
+      /* max-width: 700px; */
+      /* margin: auto; */
     }
 
     .botao {
@@ -325,8 +271,9 @@
   <div class="bg-wrapper"></div>
   <div class="bg-overlay"></div>
 
-  <header>
-    <div class="conteudo-header">
+  <header class="topo">
+    <img src="assets/imagemdetopo.jpg" alt="Foto do Trader" class="topo-imagem" />
+    <div class="topo-texto">
       <h1>Transforme Sua Presença Online</h1>
       <p>Olá, sou Gaby, Especialista em design, vídeo, marketing digital e criação de páginas que convertem!</p>
       <a class="botao" href="https://wa.me/5522998747813?text=Quero%20saber%20mais%20sobre%20o%20seu%20trabalho" target="_blank">
@@ -356,46 +303,37 @@
     </div>
   </section>
 
-
-
-
-
-  
-<section>
-  <h2>Depoimentos de Clientes</h2>
-  <div class="servicos" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px;">
-    <div class="servico" style="padding: 40px;">
-      <img src="assets/cliente1.jpg" alt="Lucas M." style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 3px solid #00ffcc;">
-      <strong style="display: block; font-size: 1.3rem; margin-bottom: 10px; color: #00ffcc;">Lucas M.</strong>
-      <p style="font-size: 1.1rem; color: #fff;">"A Gaby salvou o lançamento da minha loja! Tudo ficou muito profissional e com alta conversão. Recomendo demais."</p>
+  <section>
+    <h2>Depoimentos de Clientes</h2>
+    <div class="servicos" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px;">
+      <div class="servico" style="padding: 40px;">
+        <img src="assets/cliente1.jpg" alt="Lucas M." style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 3px solid #00ffcc;">
+        <strong style="display: block; font-size: 1.3rem; margin-bottom: 10px; color: #00ffcc;">Lucas M.</strong>
+        <p style="font-size: 1.1rem; color: #fff;">"A Gaby salvou o lançamento da minha loja! Tudo ficou muito profissional e com alta conversão. Recomendo demais."</p>
+      </div>
+      <div class="servico" style="padding: 40px;">
+        <img src="assets/cliente2.jpg" alt="Juliana R." style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 3px solid #00ffcc;">
+        <strong style="display: block; font-size: 1.3rem; margin-bottom: 10px; color: #00ffcc;">Juliana R.</strong>
+        <p style="font-size: 1.1rem; color: #fff;">"O design dos posts e vídeos ficou simplesmente impecável. Obrigada pelo carinho e dedicação, Gaby!"</p>
+      </div>
+      <div class="servico" style="padding: 40px;">
+        <img src="assets/cliente3.jpg" alt="André Silva" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 3px solid #00ffcc;">
+        <strong style="display: block; font-size: 1.3rem; margin-bottom: 10px; color: #00ffcc;">André Silva</strong>
+        <p style="font-size: 1.1rem; color: #fff;">"Trabalho rápido, criativo e muito eficiente. Fez toda a diferença para meu negócio online."</p>
+      </div>
     </div>
-    <div class="servico" style="padding: 40px;">
-      <img src="assets/cliente2.jpg" alt="Juliana R." style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 3px solid #00ffcc;">
-      <strong style="display: block; font-size: 1.3rem; margin-bottom: 10px; color: #00ffcc;">Juliana R.</strong>
-      <p style="font-size: 1.1rem; color: #fff;">"O design dos posts e vídeos ficou simplesmente impecável. Obrigada pelo carinho e dedicação, Gaby!"</p>
-    </div>
-    <div class="servico" style="padding: 40px;">
-      <img src="assets/cliente3.jpg" alt="André Silva" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 3px solid #00ffcc;">
-      <strong style="display: block; font-size: 1.3rem; margin-bottom: 10px; color: #00ffcc;">André Silva</strong>
-      <p style="font-size: 1.1rem; color: #fff;">"Trabalho rápido, criativo e muito acima das minhas expectativas. Já virei cliente fixo."</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-
-
-
-
-  
   <section class="contato">
-    <h2>Entre em Contato</h2>
-    <a class="botao" href="https://wa.me/5522998747813?text=Quero%20saber%20mais%20sobre%20o%20seu%20trabalho" target="_blank">
-      Fale comigo no WhatsApp
+    <h2>Contato</h2>
+    <p>Quer trabalhar comigo? Envie uma mensagem e vamos conversar!</p>
+    <a class="botao" href="https://wa.me/5522998747813?text=Olá%20Gaby,%20gostaria%20de%20saber%20mais%20sobre%20seus%20serviços." target="_blank">
+      WhatsApp
     </a>
   </section>
 
   <footer>
-    © 2025 - Todos os direitos reservados - Gaby Barbosa
+    &copy; 2025 Gaby Designer | Todos os direitos reservados.
   </footer>
 </body>
 </html>
